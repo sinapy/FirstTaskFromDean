@@ -1,5 +1,6 @@
-using System.Collections;
+using FirstTaskFromDean.Data;
 using FirstTaskFromDean.Models;
+using FirstTaskFromDean.Repositories.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstTaskFromDean.Controllers;
@@ -8,26 +9,19 @@ namespace FirstTaskFromDean.Controllers;
 [Route("[controller]")]
 public class RubbersController : Controller
 {
+    
 
-    private static List<Rubber> Rubbers = new List<Rubber>()
-    {
-        new Rubber
-        {
-            id = Guid.NewGuid(),
-            name = "T-Energy50",
-            brand = "Butterfly",
-            power = 89,
-            speed = 91,
-            spin = 89,
-            touch = 70
-        }   
-    };
-
+    private IRubberRepository _repository;
     private readonly ILogger<RubbersController> _logger;
+    private readonly FirstTaskDbContext _context;
 
-    public RubbersController(ILogger<RubbersController> logger)
+    public RubbersController(
+        ILogger<RubbersController> logger,
+        FirstTaskDbContext context
+        )
     {
         _logger = logger;
+        _context = context;
     }
 
     [HttpGet("GetRubbers")]
@@ -38,19 +32,15 @@ public class RubbersController : Controller
         // {
         //     
         // }
-        return Ok(Rubbers);
+        return Ok(_context.getRubbers());
     }
 
     [HttpGet("GetRubber/{id}")]
     public IActionResult GetRubber([FromRoute] Guid id)
     {
-        foreach (Rubber rubber in Rubbers)
-        {
+        foreach (var rubber in _context.getRubbers())
             if (rubber.id == id)
-            {
                 return Ok(rubber);
-            }
-        }
 
         return BadRequest("ID does not exist");
     }
@@ -58,7 +48,7 @@ public class RubbersController : Controller
     [HttpPost("CreateRubber")]
     public async Task<IActionResult> CreateRubber([FromBody] Rubber newRubber)
     {
-        Rubber rubber = new Rubber
+        var rubber = new Rubber
         {
             brand = newRubber.brand,
             id = Guid.NewGuid(),
@@ -68,16 +58,15 @@ public class RubbersController : Controller
             spin = newRubber.spin,
             touch = newRubber.touch
         };
-        
-        Rubbers.Add(rubber);
-        return Ok(Rubbers);
+
+        _context.Add(rubber);
+        return Ok(_context.getRubbers());
     }
 
     [HttpPut("UpdateRubber/{id}")]
     public async Task<IActionResult> UpdateRubber([FromRoute] Guid id, [FromBody] Rubber updatedRubber)
     {
-        foreach (Rubber rubber in Rubbers)
-        {
+        foreach (var rubber in _context.getRubbers())
             if (rubber.id == id)
             {
                 rubber.brand = updatedRubber.brand;
@@ -88,7 +77,6 @@ public class RubbersController : Controller
                 rubber.touch = updatedRubber.touch;
                 return Ok("Product updated");
             }
-        }
 
         return BadRequest("ID does not exist");
     }
@@ -96,14 +84,12 @@ public class RubbersController : Controller
     [HttpDelete("DeleteRubber/{id}")]
     public async Task<IActionResult> DeleteRubber([FromRoute] Guid id)
     {
-        foreach (Rubber rubber in Rubbers)
-        {
+        foreach (var rubber in _context.getRubbers())
             if (rubber.id == id)
             {
-                Rubbers.Remove(rubber);
+                _context.Remove(rubber);
                 return Ok("Product removed");
             }
-        }
 
         return BadRequest("ID does not exist");
     }

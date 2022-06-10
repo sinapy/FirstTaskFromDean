@@ -1,0 +1,17 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AExceptionDispatchInfo_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003F_002Econfig_003FJetBrains_003FRider2022_002E1_003Fresharper_002Dhost_003FSourcesCache_003Fbebd253e21dcf766929bfdfd74615bfe46e6e1693b289273dbdb82152893_003FExceptionDispatchInfo_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=62be321d_002Dabd9_002D468d_002D84ef_002D403d6dfdb1ff/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="PassingTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;NUnit3x::4B487D83-29AA-441A-B055-734FDB3B525E::net6.0::FirstTaskFromDeanUnitTest.Tests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=69573c83_002Dbd81_002D4f86_002Dbe64_002D62d02f523806/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Session" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B0A9BB6E-B748-469E-B77D-04C36E84F9F9::net6.0::FirstTaskFromDean.Test.RubbersControllerTest.GetRubbers_Returns_The_Correct_Number_Of_Rubbers&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d3f3dadb_002D4541_002D4b93_002Da7ee_002D94c0dfcd750c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GetRubbers_Returns_The_Correct_Number_Of_Rubbers" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::B0A9BB6E-B748-469E-B77D-04C36E84F9F9::net6.0::FirstTaskFromDean.Test.RubbersControllerTest.GetRubbers_Returns_The_Correct_Number_Of_Rubbers&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
